@@ -1,4 +1,5 @@
 import 'package:firebase_authentication/firebase/sign_in.dart';
+import 'package:firebase_authentication/ui/transaction_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'login_page.dart';
@@ -54,7 +55,8 @@ class SuccessScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 40),
-              buildRaisedButton(context)
+              buildRaisedButtonTrasaction(context),
+              buildRaisedButton(context),
             ],
           ),
         ),
@@ -81,6 +83,29 @@ class SuccessScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(40)),
             );
   }
+  RaisedButton buildRaisedButtonTrasaction(BuildContext context) {
+    return RaisedButton(
+              onPressed: () async {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => TransactionScreen(),
+                  ),
+                );
+              },
+              color: Colors.deepPurple,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Transaction Overview',
+                  style: TextStyle(fontSize: 16, color: Colors.white),
+                ),
+              ),
+              elevation: 5,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(40)),
+            );
+  }
+
 }
 
 
