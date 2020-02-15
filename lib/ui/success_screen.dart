@@ -83,6 +83,7 @@ class SuccessScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(40)),
             );
   }
+
   RaisedButton buildRaisedButtonTrasaction(BuildContext context) {
     return RaisedButton(
               onPressed: () async {
